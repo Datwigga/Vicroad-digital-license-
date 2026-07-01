@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital License - Download</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #003DA5 0%, #1E3A8A 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0, 61, 165, 0.3);
+            max-width: 500px;
+            width: 100%;
+            padding: 48px 32px;
+            text-align: center;
+        }
+
+        .icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #003DA5, #1E3A8A);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 40px;
+        }
+
+        h1 {
+            color: #003DA5;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 32px;
+            line-height: 1.5;
+        }
+
+        .download-section {
+            margin: 40px 0;
+        }
+
+        .button {
+            display: inline-block;
+            width: 100%;
+            padding: 16px 32px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: white;
+        }
+
+        .button-primary {
+            background: linear-gradient(135deg, #003DA5, #1E3A8A);
+            box-shadow: 0 8px 20px rgba(0, 61, 165, 0.3);
+        }
+
+        .button-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(0, 61, 165, 0.4);
+        }
+
+        .button-secondary {
+            background: #F5F5F5;
+            color: #003DA5;
+            border: 2px solid #003DA5;
+        }
+
+        .button-secondary:hover {
+            background: #E8F0FF;
+        }
+
+        .credentials {
+            background: #F0F4FF;
+            border-left: 4px solid #003DA5;
+            padding: 16px;
+            margin: 24px 0;
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        .credentials h3 {
+            color: #003DA5;
+            font-size: 14px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .credential-item {
+            color: #333;
+            font-size: 14px;
+            margin: 4px 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        .credential-item span {
+            color: #003DA5;
+            font-weight: 600;
+        }
+
+        .features {
+            margin: 32px 0;
+            text-align: left;
+        }
+
+        .features h3 {
+            color: #003DA5;
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            color: #666;
+            font-size: 14px;
+            margin: 8px 0;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #003DA5;
+            font-weight: bold;
+        }
+
+        .steps {
+            background: #F5F5F5;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 24px 0;
+            text-align: left;
+        }
+
+        .steps h3 {
+            color: #003DA5;
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+
+        .step {
+            color: #333;
+            font-size: 14px;
+            margin: 8px 0;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .step:before {
+            content: attr(data-step);
+            position: absolute;
+            left: 0;
+            background: #003DA5;
+            color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .footer {
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid #E0E0E0;
+            color: #999;
+            font-size: 12px;
+        }
+
+        .footer a {
+            color: #003DA5;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .copy-button {
+            background: #E8F0FF;
+            border: 1px solid #003DA5;
+            color: #003DA5;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 12px;
+            cursor: pointer;
+            margin-top: 8px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .copy-button:hover {
+            background: #003DA5;
+            color: white;
+        }
+
+        .qr-section {
+            margin: 32px 0;
+        }
+
+        .qr-section img {
+            width: 200px;
+            height: 200px;
+            border: 2px solid #E0E0E0;
+            border-radius: 12px;
+            padding: 12px;
+            background: white;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 32px 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .subtitle {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon">💳</div>
+        <h1>Digital License</h1>
+        <p class="subtitle">VicRoads Digital Wallet - Your License, Always with You</p>
+
+        <div class="download-section">
+            <a href="#" class="button button-primary" onclick="downloadAPK(); return false;">
+                📥 Download APK for Android
+            </a>
+            <a href="https://github.com/Datwigga/Vicroad-digital-license-" class="button button-secondary">
+                💻 View on GitHub
+            </a>
+        </div>
+
+        <div class="qr-section">
+            <p style="color: #999; font-size: 12px; margin-bottom: 12px;">Scan to clone repository:</p>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://github.com/Datwigga/Vicroad-digital-license-" alt="Repository QR Code">
+        </div>
+
+        <div class="credentials">
+            <h3>🔓 Demo Credentials</h3>
+            <div class="credential-item">Invite Code: <span>521vic125</span></div>
+            <div class="credential-item">Password: <span>demo123</span></div>
+        </div>
+
+        <div class="steps">
+            <h3>📱 Quick Setup (3 Steps)</h3>
+            <div class="step" data-step="1">Enable USB Debugging on your Android phone</div>
+            <div class="step" data-step="2">Connect phone via USB cable</div>
+            <div class="step" data-step="3">Run: <code>flutter run</code></div>
+        </div>
+
+        <div class="features">
+            <h3>✨ Features</h3>
+            <ul class="feature-list">
+                <li>Digital Driver License with flip animation</li>
+                <li>QR Code (auto-refresh every 30 seconds)</li>
+                <li>Vehicle registration management</li>
+                <li>Privacy mode with blur effect</li>
+                <li>Offline-first approach</li>
+                <li>Government-style UI</li>
+            </ul>
+        </div>
+
+        <div class="credentials">
+            <h3>📋 System Requirements</h3>
+            <div style="font-size: 13px; color: #666; text-align: center;">
+                <div>Android 6.0+ • Flutter 3.0+ • Dart 3.0+</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Built with Flutter • Clean Architecture • BLoC Pattern</p>
+            <p style="margin-top: 12px;">
+                <a href="https://github.com/Datwigga/Vicroad-digital-license-" target="_blank">View Repository</a> • 
+                <a href="https://github.com/Datwigga/Vicroad-digital-license-/blob/main/INSTALLATION.md" target="_blank">Installation Guide</a> • 
+                <a href="https://github.com/Datwigga/Vicroad-digital-license-/issues" target="_blank">Report Issue</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function downloadAPK() {
+            // Redirect to releases page
+            window.location.href = 'https://github.com/Datwigga/Vicroad-digital-license-/releases';
+        }
+
+        // Add copy to clipboard functionality
+        document.querySelectorAll('.credential-item span').forEach(el => {
+            el.style.cursor = 'pointer';
+            el.title = 'Click to copy';
+            el.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const text = this.textContent;
+                navigator.clipboard.writeText(text).then(() => {
+                    const original = this.textContent;
+                    this.textContent = '✓ Copied!';
+                    this.style.color = '#4CAF50';
+                    setTimeout(() => {
+                        this.textContent = original;
+                        this.style.color = '#003DA5';
+                    }, 2000);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
